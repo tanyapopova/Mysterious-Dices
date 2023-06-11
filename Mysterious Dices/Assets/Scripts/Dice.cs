@@ -36,17 +36,17 @@ public class Dice : MonoBehaviour {
         int finalSide = 0;
 
         // Loop to switch dice sides ramdomly
-        // before final side appears. 20 itterations here.
-        for (int i = 0; i <= 20; i++)
+        // before final side appears. 40 itterations here.
+        for (int i = 0; i <= 40; i++)
         {
-            // Pick up random value from 0 to 5 (All inclusive)
+            // Pick up random value from 0 to 6 (All inclusive)
             randomDiceSide = Random.Range(0,6);
 
             // Set sprite to upper face of dice from array according to random value
             rend.sprite = diceSides[randomDiceSide];
 
             // Pause before next itteration
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.1f);
         }
 
         // Assigning final side so you can use this value later in your game
@@ -56,4 +56,6 @@ public class Dice : MonoBehaviour {
         // Show final dice value in Console
         Debug.Log(finalSide);
     }
+
+
 }
